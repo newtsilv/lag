@@ -48,8 +48,15 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#09070f] text-white">
       <header className="sticky top-0 z-20 border-b border-white/10 bg-[#09070f]/88 px-4 py-4 backdrop-blur-md sm:px-6">
         <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3">
-          <Link className="text-xs font-black uppercase tracking-[0.32em] sm:text-sm" href="/">
-            LAG CEUMA
+          <Link className="flex items-center" href="/" aria-label="Início">
+            <Image
+              alt="Liga Acadêmica de Games da Universidade CEUMA"
+              className="h-8 ml-2.5 w-auto object-contain"
+              height={30}
+              priority
+              src="/Luigi.svg"
+              width={30}
+            />
           </Link>
           <div className="hidden items-center gap-6 text-sm font-medium text-zinc-300 md:flex">
             <a className="transition hover:text-[#985EF7]" href="#sobre">
@@ -254,9 +261,9 @@ export default function Home() {
               Um lugar para participar, aprender e construir junto.
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/80">
-              A landing começa apresentando a liga, mas também prepara o portal
-              para receber novas áreas no futuro, como conteúdos para alunos,
-              trilhas, eventos e administração.
+              A comunidade aproxima estudantes que querem aprender fazendo,
+              trocar experiências e participar de projetos, estudos e eventos
+              ligados ao universo dos jogos.
             </p>
           </div>
           <ul className="grid gap-3">
