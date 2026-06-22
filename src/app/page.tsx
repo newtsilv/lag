@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const focusAreas = [
@@ -34,7 +35,11 @@ const communityItems = [
   "Compartilhar estudos, ideias e experiências",
 ];
 
-const sponsorLogos = ["Logo 1", "Logo 2", "Logo 3"];
+const sponsorLogos = [
+  { src: "/logo_ceuma.svg", alt: "CEUMA" },
+  { src: "/logoOxygeniHub.svg", alt: "Oxygeni Hub" },
+  { src: "/Luigi.svg", alt: "Luigi" },
+];
 
 const logoLoop = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
 
@@ -83,8 +88,8 @@ export default function Home() {
             <p className="mb-5 inline-flex rounded-full border border-[#985EF7]/35 bg-[#985EF7]/12 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-[#d8c3ff]">
               Portal oficial da liga
             </p>
-            <h1 className="max-w-4xl text-5xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
-              Liga Acadêmica de Games do CEUMA
+            <h1 className="max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-7xl">
+              Liga Acadêmica de Games da Universidade CEUMA
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
               Uma comunidade para criar jogos, estudar tecnologia, trocar ideias
@@ -160,17 +165,20 @@ export default function Home() {
 
       <section aria-label="Espaço para logos" className="px-4 pb-10 sm:px-6">
         <div className="mx-auto max-w-6xl border-y border-white/10 py-6">
-          <p className="mb-4 text-center text-xs font-black uppercase tracking-[0.28em] text-zinc-500">
-            Espaço reservado para apoiadores e parceiros
-          </p>
           <div className="logo-marquee overflow-hidden">
             <div className="logo-marquee-track flex w-max gap-4">
               {logoLoop.map((logo, index) => (
                 <div
-                  className="grid h-20 w-44 place-items-center rounded-2xl border border-white/10 bg-white/[0.035] text-sm font-black uppercase tracking-[0.26em] text-zinc-400"
-                  key={`${logo}-${index}`}
+                  className="grid h-20 w-44 place-items-center rounded-2xl border border-white/10 bg-white/[0.035] px-6"
+                  key={`${logo.src}-${index}`}
                 >
-                  {logo}
+                  <Image
+                    alt={logo.alt}
+                    className="max-h-12 max-w-32 object-contain"
+                    height={48}
+                    src={logo.src}
+                    width={128}
+                  />
                 </div>
               ))}
             </div>
@@ -188,13 +196,22 @@ export default function Home() {
               Games como prática acadêmica, criativa e tecnológica.
             </h2>
           </div>
-          <p className="text-lg leading-8 text-zinc-300">
-            A Liga Acadêmica de Games do CEUMA reúne estudantes interessados em
-            desenvolvimento de jogos, game design, pesquisa, eventos e projetos
-            colaborativos. A proposta é criar um ambiente para aprender na
-            prática, estudar temas ligados a games e fortalecer a comunidade
-            acadêmica em torno da área.
-          </p>
+          <div className="grid gap-6 lg:grid-cols-[1fr_15rem] lg:items-start">
+            <p className="text-lg leading-8 text-zinc-300">
+              A Liga Acadêmica de Games do CEUMA reúne estudantes interessados em
+              desenvolvimento de jogos, game design, pesquisa, eventos e projetos
+              colaborativos. A proposta é criar um ambiente para aprender na
+              prática, estudar temas ligados a games e fortalecer a comunidade
+              acadêmica em torno da área.
+            </p>
+            <div className="group relative aspect-square cursor-default">
+              <span className="absolute inset-0 rounded-3xl bg-[#c9abff]" />
+              <div
+                className="relative h-full overflow-hidden rounded-3xl border border-white/15 bg-cover bg-center transition-transform duration-300 ease-out group-hover:-translate-x-2 group-hover:-translate-y-3"
+                style={{ backgroundImage: "url('/pessoas.png')" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -245,10 +262,13 @@ export default function Home() {
           <ul className="grid gap-3">
             {communityItems.map((item) => (
               <li
-                className="relative isolate cursor-default rounded-2xl bg-[#09070f] px-5 py-4 font-semibold text-white transition duration-300 ease-out before:absolute before:inset-0 before:-z-10 before:translate-x-2 before:translate-y-2 before:rounded-2xl before:border before:border-white/10 before:bg-[#2a123f] before:content-[''] hover:-translate-x-1 hover:-translate-y-3 hover:before:translate-x-5 hover:before:translate-y-5 hover:before:bg-[#3a1760]"
+                className="group relative cursor-default text-left"
                 key={item}
               >
-                {item}
+                <span className="absolute inset-0 rounded-2xl bg-[#2a123f]" />
+                <span className="relative block rounded-2xl bg-[#09070f] px-5 py-4 font-semibold text-white transition-transform duration-300 ease-out group-hover:-translate-x-2 group-hover:-translate-y-3 h-full">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
