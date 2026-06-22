@@ -194,24 +194,25 @@ export default function Home() {
       </section>
 
       <section id="sobre" className="px-4 py-14 sm:px-6">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] border border-white/10 bg-[#14101d] p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 rounded-[2rem] border border-white/10 bg-[#14101d] p-8 md:p-10">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.3em] text-[#c9abff]">
               Sobre a liga
             </p>
-            <h2 className="mt-4 text-3xl font-black uppercase leading-none sm:text-5xl">
+          </div>
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr_15rem] lg:items-start">
+            <h2 className="text-3xl font-black uppercase leading-none sm:text-5xl">
               Games como prática acadêmica, criativa e tecnológica.
             </h2>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-[1fr_15rem] lg:items-start">
-            <p className="text-lg leading-8 text-zinc-300">
-              A Liga Acadêmica de Games do CEUMA reúne estudantes interessados em
-              desenvolvimento de jogos, game design, pesquisa, eventos e projetos
-              colaborativos. A proposta é criar um ambiente para aprender na
-              prática, estudar temas ligados a games e fortalecer a comunidade
-              acadêmica em torno da área.
+
+            <p className="text-lg leading-8 text-zinc-300 lg:max-w-md">
+              A Liga Acadêmica de Games da Universidade CEUMA reúne estudantes
+              interessados em desenvolvimento de jogos, game design, pesquisa,
+              eventos e projetos colaborativos. A proposta é criar um ambiente
+              para aprender na prática, estudar temas ligados a games e
+              fortalecer a comunidade acadêmica em torno da área.
             </p>
-            <div className="group relative aspect-square cursor-default">
+            <div className="group relative aspect-square w-full max-w-xs cursor-default lg:w-60 lg:max-w-none">
               <span className="absolute inset-0 rounded-3xl bg-[#c9abff]" />
               <div
                 className="relative h-full overflow-hidden rounded-3xl border border-white/15 bg-cover bg-center transition-transform duration-300 ease-out group-hover:-translate-x-2 group-hover:-translate-y-3"
