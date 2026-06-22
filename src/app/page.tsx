@@ -3,21 +3,25 @@ import Link from "next/link";
 const focusAreas = [
   {
     title: "Desenvolvimento de jogos",
+    label: "DEV",
     description:
       "Criação de protótipos, mecânicas, programação e experimentação com engines.",
   },
   {
     title: "Game design",
+    label: "DESIGN",
     description:
       "Estudo de experiência, narrativa, sistemas, balanceamento e design de fases.",
   },
   {
     title: "Pesquisa e estudos",
+    label: "PESQUISA",
     description:
       "Discussões acadêmicas sobre jogos, tecnologia, cultura e aprendizagem.",
   },
   {
     title: "Eventos e comunidade",
+    label: "COMUNIDADE",
     description:
       "Encontros, oficinas, game jams e integração entre estudantes interessados em games.",
   },
@@ -30,34 +34,38 @@ const communityItems = [
   "Compartilhar estudos, ideias e experiências",
 ];
 
+const sponsorLogos = ["Logo 1", "Logo 2", "Logo 3"];
+
+const logoLoop = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#080912] text-white">
-      <header className="sticky top-0 z-10 border-b border-white/10 bg-[#080912]/90 px-6 py-4 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6">
-          <Link className="text-sm font-bold uppercase tracking-[0.35em]" href="/">
+    <main className="min-h-screen overflow-hidden bg-[#09070f] text-white">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#09070f]/88 px-4 py-4 backdrop-blur-md sm:px-6">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3">
+          <Link className="text-xs font-black uppercase tracking-[0.32em] sm:text-sm" href="/">
             LAG CEUMA
           </Link>
-          <div className="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
-            <a className="transition hover:text-white" href="#sobre">
+          <div className="hidden items-center gap-6 text-sm font-medium text-zinc-300 md:flex">
+            <a className="transition hover:text-[#985EF7]" href="#sobre">
               Sobre
             </a>
-            <a className="transition hover:text-white" href="#areas">
+            <a className="transition hover:text-[#985EF7]" href="#areas">
               Áreas
             </a>
-            <a className="transition hover:text-white" href="#comunidade">
+            <a className="transition hover:text-[#985EF7]" href="#comunidade">
               Comunidade
             </a>
           </div>
           <div className="flex items-center gap-2 text-xs font-semibold sm:text-sm">
             <Link
-              className="rounded-full border border-white/15 px-3 py-2 text-zinc-200 transition hover:border-cyan-300 hover:text-white sm:px-4"
+              className="rounded-full border border-white/15 px-3 py-2 text-zinc-200 transition hover:border-[#985EF7] hover:text-white sm:px-4"
               href="/aluno"
             >
               Aluno
             </Link>
             <Link
-              className="rounded-full bg-cyan-300 px-3 py-2 text-zinc-950 transition hover:bg-cyan-200 sm:px-4"
+              className="rounded-full bg-[#985EF7] px-3 py-2 text-white transition hover:bg-[#ad7cff] sm:px-4"
               href="/admin"
             >
               Admin
@@ -66,32 +74,31 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="relative overflow-hidden px-6 py-20 sm:py-28">
-        <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-violet-500/20 blur-3xl" />
+      <section className="relative px-4 py-14 sm:px-6 sm:py-20">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:44px_44px]" />
+        <div className="absolute left-0 top-16 -z-10 h-64 w-64 rounded-full bg-[#985EF7]/18 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <p className="mb-5 inline-flex rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+            <p className="mb-5 inline-flex rounded-full border border-[#985EF7]/35 bg-[#985EF7]/12 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-[#d8c3ff]">
               Portal oficial da liga
             </p>
-            <h1 className="max-w-4xl text-5xl font-black tracking-tight sm:text-7xl">
+            <h1 className="max-w-4xl text-5xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
               Liga Acadêmica de Games do CEUMA
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-              Um espaço para estudantes criarem, estudarem e compartilharem
-              experiências sobre jogos, tecnologia, pesquisa e comunidade
-              acadêmica.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+              Uma comunidade para criar jogos, estudar tecnologia, trocar ideias
+              e transformar curiosidade em projetos dentro do CEUMA.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 transition hover:bg-cyan-100"
+                className="rounded-xl bg-[#985EF7] px-6 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#ad7cff]"
                 href="#sobre"
               >
                 Conhecer a liga
               </a>
               <a
-                className="rounded-full border border-white/20 px-6 py-3 text-center text-sm font-bold text-white transition hover:border-cyan-300"
+                className="rounded-xl border border-white/15 bg-white/[0.03] px-6 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white transition hover:border-[#985EF7]"
                 href="#areas"
               >
                 Ver áreas de atuação
@@ -99,32 +106,51 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-            <div className="rounded-[1.5rem] bg-zinc-950 p-5">
-              <div className="mb-6 flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-red-400" />
-                <span className="h-3 w-3 rounded-full bg-yellow-300" />
-                <span className="h-3 w-3 rounded-full bg-green-400" />
-              </div>
-              <div className="space-y-4">
-                <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4">
-                  <p className="text-sm font-semibold text-cyan-100">Game Jam</p>
-                  <p className="mt-2 text-sm text-zinc-300">
-                    Ideias, protótipos e colaboração entre estudantes.
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="absolute -right-5 -top-5 h-24 w-24 rounded-3xl bg-[#985EF7]" />
+            <div className="absolute -bottom-5 -left-5 h-28 w-28 rounded-full border border-[#985EF7]/40" />
+            <div className="relative rotate-1 rounded-[1.75rem] border border-white/12 bg-[#15101f] p-4 shadow-2xl shadow-black/40">
+              <div className="rounded-[1.35rem] border border-white/10 bg-[#0d0b14] p-5">
+                <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400">
+                    LAG console
                   </p>
+                  <span className="rounded-full bg-[#985EF7] px-3 py-1 text-xs font-black">
+                    online
+                  </span>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl bg-white/10 p-4">
-                    <p className="text-2xl font-black">4+</p>
-                    <p className="text-xs text-zinc-400">áreas de estudo</p>
+                <div className="grid gap-4">
+                  <div className="rounded-2xl bg-[#985EF7] p-5 text-white">
+                    <p className="text-sm font-black uppercase tracking-[0.2em] text-white/75">
+                      Próxima fase
+                    </p>
+                    <p className="mt-3 text-3xl font-black uppercase leading-none">
+                      Criar. Jogar. Aprender.
+                    </p>
                   </div>
-                  <div className="rounded-2xl bg-white/10 p-4">
-                    <p className="text-2xl font-black">CEUMA</p>
-                    <p className="text-xs text-zinc-400">comunidade acadêmica</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                      <p className="text-3xl font-black">4</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-400">
+                        frentes
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                      <p className="text-3xl font-black">01</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-400">
+                        comunidade
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="rounded-2xl border border-violet-300/20 bg-violet-300/10 p-4 text-sm text-violet-100">
-                  Desenvolvimento, pesquisa, eventos e troca de conhecimento.
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                    <div className="mb-3 h-2 rounded-full bg-white/10">
+                      <div className="h-2 w-3/4 rounded-full bg-[#985EF7]" />
+                    </div>
+                    <p className="text-sm text-zinc-300">
+                      Portal em construção para conectar estudantes, trilhas,
+                      eventos e projetos da liga.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -132,13 +158,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sobre" className="px-6 py-16">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
+      <section aria-label="Espaço para logos" className="px-4 pb-10 sm:px-6">
+        <div className="mx-auto max-w-6xl border-y border-white/10 py-6">
+          <p className="mb-4 text-center text-xs font-black uppercase tracking-[0.28em] text-zinc-500">
+            Espaço reservado para apoiadores e parceiros
+          </p>
+          <div className="logo-marquee overflow-hidden">
+            <div className="logo-marquee-track flex w-max gap-4">
+              {logoLoop.map((logo, index) => (
+                <div
+                  className="grid h-20 w-44 place-items-center rounded-2xl border border-white/10 bg-white/[0.035] text-sm font-black uppercase tracking-[0.26em] text-zinc-400"
+                  key={`${logo}-${index}`}
+                >
+                  {logo}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" className="px-4 py-14 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] border border-white/10 bg-[#14101d] p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-200">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-[#c9abff]">
               Sobre a liga
             </p>
-            <h2 className="mt-4 text-3xl font-black sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-black uppercase leading-none sm:text-5xl">
               Games como prática acadêmica, criativa e tecnológica.
             </h2>
           </div>
@@ -152,23 +198,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="areas" className="px-6 py-16">
+      <section id="areas" className="px-4 py-14 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-200">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-[#c9abff]">
               Áreas de atuação
             </p>
-            <h2 className="mt-4 text-3xl font-black sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-black uppercase leading-none sm:text-5xl">
               Pontos de partida para estudar e criar jogos.
             </h2>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {focusAreas.map((area) => (
               <article
-                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.07]"
+                className="group rounded-3xl border border-white/10 bg-[#14101d] p-6 transition hover:-translate-y-1 hover:border-[#985EF7]/60"
                 key={area.title}
               >
-                <h3 className="text-xl font-bold">{area.title}</h3>
+                <p className="mb-8 inline-flex rounded-full bg-[#985EF7]/15 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-[#c9abff]">
+                  {area.label}
+                </p>
+                <h3 className="text-xl font-black uppercase leading-tight">
+                  {area.title}
+                </h3>
                 <p className="mt-4 leading-7 text-zinc-400">{area.description}</p>
               </article>
             ))}
@@ -176,16 +227,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="comunidade" className="px-6 py-16">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] bg-cyan-300 p-8 text-zinc-950 md:grid-cols-[1fr_0.9fr] md:p-10">
+      <section id="comunidade" className="px-4 py-14 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] bg-[#985EF7] p-8 text-white md:grid-cols-[1fr_0.9fr] md:p-10">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.3em] text-zinc-700">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-white/70">
               Comunidade
             </p>
-            <h2 className="mt-4 text-3xl font-black sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-black uppercase leading-none sm:text-5xl">
               Um lugar para participar, aprender e construir junto.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-zinc-800">
+            <p className="mt-5 text-lg leading-8 text-white/80">
               A landing começa apresentando a liga, mas também prepara o portal
               para receber novas áreas no futuro, como conteúdos para alunos,
               trilhas, eventos e administração.
@@ -194,7 +245,7 @@ export default function Home() {
           <ul className="grid gap-3">
             {communityItems.map((item) => (
               <li
-                className="rounded-2xl bg-zinc-950 px-5 py-4 font-semibold text-white"
+                className="rounded-2xl bg-[#09070f] px-5 py-4 font-semibold text-white"
                 key={item}
               >
                 {item}
