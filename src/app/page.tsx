@@ -245,7 +245,7 @@ export default function Home() {
           <ul className="grid gap-3">
             {communityItems.map((item) => (
               <li
-                className="rounded-2xl bg-[#09070f] px-5 py-4 font-semibold text-white"
+                className="cursor-default rounded-2xl bg-[#09070f] px-5 py-4 font-semibold text-white transition duration-300 ease-out hover:-translate-y-3 hover:shadow-[0_22px_45px_rgba(0,0,0,0.55),0_0_35px_rgba(152,94,247,0.55)]"
                 key={item}
               >
                 {item}
