@@ -35,6 +35,39 @@ body {
   }
 }
 
+@keyframes lag-console-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes lag-console-square-float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(8px, -14px) rotate(5deg);
+  }
+}
+
+@keyframes lag-console-orb-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-10px, 8px) scale(1.04);
+  }
+}
+
 .logo-marquee {
   mask-image: linear-gradient(
     to right,
@@ -49,8 +82,26 @@ body {
   animation: logo-marquee 22s linear infinite;
 }
 
+.lag-console-float {
+  animation: lag-console-float 5.5s ease-in-out infinite;
+}
+
+.lag-console-square-float {
+  animation: lag-console-square-float 6.8s ease-in-out infinite;
+}
+
+.lag-console-orb-float {
+  animation: lag-console-orb-float 7.6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-marquee-track {
+    animation: none;
+  }
+
+  .lag-console-float,
+  .lag-console-square-float,
+  .lag-console-orb-float {
     animation: none;
   }
 }

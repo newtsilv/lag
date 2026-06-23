@@ -118,9 +118,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="absolute -right-5 -top-5 h-24 w-24 rounded-3xl bg-[#985EF7]" />
-            <div className="absolute -bottom-5 -left-5 h-28 w-28 rounded-full border border-[#985EF7]/40" />
+          <div className="lag-console-float relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="lag-console-square-float absolute -right-5 -top-5 h-24 w-24 rounded-3xl bg-[#985EF7]" />
+            <div className="lag-console-orb-float absolute -bottom-5 -left-5 h-28 w-28 rounded-full border border-[#985EF7]/40" />
             <div className="relative rotate-1 rounded-[1.75rem] border border-white/12 bg-[#15101f] p-4 shadow-2xl shadow-black/40">
               <div className="rounded-[1.35rem] border border-white/10 bg-[#0d0b14] p-5">
                 <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
@@ -132,7 +132,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="grid gap-4">
-                  <div className="rounded-2xl bg-[#985EF7] p-5 text-white">
+                  <div className="rounded-2xl border border-[#985EF7]/50 bg-[#985EF7] p-5 text-white shadow-lg shadow-[#985EF7]/15 transition duration-300 ease-out hover:-translate-y-1 hover:border-white/25 hover:shadow-[#985EF7]/30">
                     <p className="text-sm font-black uppercase tracking-[0.2em] text-white/75">
                       Próxima fase
                     </p>
@@ -140,7 +140,7 @@ export default function Home() {
                       Criar. Jogar. Aprender.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
+                  {/* <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
                       <p className="text-3xl font-black">4</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-400">
@@ -153,8 +153,8 @@ export default function Home() {
                         comunidade
                       </p>
                     </div>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  </div> */}
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition duration-300 ease-out hover:-translate-y-1 hover:border-[#985EF7]/45 hover:bg-white/[0.06] hover:shadow-lg hover:shadow-[#985EF7]/10">
                     <div className="mb-3 h-2 rounded-full bg-white/10">
                       <div className="h-2 w-3/4 rounded-full bg-[#985EF7]" />
                     </div>
