@@ -39,10 +39,15 @@ const communityItems = [
 const sponsorLogos = [
   { src: "/logo_ceuma.svg", alt: "CEUMA" },
   { src: "/logoOxygeniHub.svg", alt: "Oxygeni Hub" },
-  { src: "/Luigi.svg", alt: "Luigi" },
+  { src: "/laglogo.svg", alt: "Luigi" },
 ];
 
-const logoLoop = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
+const logoLoop = [
+  ...sponsorLogos,
+  ...sponsorLogos,
+  ...sponsorLogos,
+  ...sponsorLogos,
+];
 
 export default function Home() {
   return (
@@ -55,7 +60,7 @@ export default function Home() {
               className="h-8 ml-2.5 w-auto object-contain"
               height={30}
               priority
-              src="/Luigi.svg"
+              src="/laglogo.svg"
               width={30}
             />
           </Link>
@@ -199,7 +204,9 @@ export default function Home() {
                 <h3 className="text-xl font-black uppercase leading-tight">
                   {area.title}
                 </h3>
-                <p className="mt-4 leading-7 text-zinc-400">{area.description}</p>
+                <p className="mt-4 leading-7 text-zinc-400">
+                  {area.description}
+                </p>
               </article>
             ))}
           </div>
