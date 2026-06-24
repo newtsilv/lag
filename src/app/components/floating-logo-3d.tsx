@@ -137,15 +137,15 @@ export function FloatingLogo3D() {
 
   return (
     <div
-      className="relative mx-auto aspect-square w-full max-w-md overflow-visible lg:max-w-none"
+      className="relative mx-auto aspect-square w-full max-w-[20rem] overflow-hidden sm:max-w-md sm:overflow-visible lg:max-w-none"
       onPointerEnter={updateHoverState}
       onPointerLeave={() => {
         hoverStateRef.current = { active: false, rotationX: 0, rotationY: 0, scale: 1 };
       }}
       onPointerMove={updateHoverState}
     >
-      <div className="absolute inset-10 rounded-full bg-[#985EF7]/16 blur-3xl" />
-      <div className="absolute inset-x-16 bottom-20 h-12 rounded-full bg-[#985EF7]/20 blur-2xl" />
+      <div className="absolute inset-10 rounded-full bg-[#985EF7]/16 blur-xl sm:blur-3xl" />
+      <div className="absolute inset-x-16 bottom-20 h-12 rounded-full bg-[#985EF7]/20 blur-xl sm:blur-2xl" />
       <Canvas
         camera={{ position: [0, 0.25, 5], fov: 38 }}
         className="relative z-10"
@@ -159,7 +159,7 @@ export function FloatingLogo3D() {
           <LogoModel hoverStateRef={hoverStateRef} />
         </Suspense>
       </Canvas>
-      <div className="pointer-events-none absolute inset-x-8 bottom-7 h-8 rounded-full bg-[#985EF7]/25 blur-xl" />
+      <div className="pointer-events-none absolute inset-x-8 bottom-7 h-8 rounded-full bg-[#985EF7]/25 hidden sm:block sm:blur-xl" />
     </div>
   );
 }

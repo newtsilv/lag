@@ -87,16 +87,16 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="relative px-4 py-14 sm:px-6 sm:py-20">
+      <section className="relative overflow-hidden px-4 py-12 sm:px-6 sm:py-20">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:44px_44px]" />
         <div className="absolute left-0 top-16 -z-10 h-64 w-64 rounded-full bg-[#985EF7]/18 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div>
+        <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="min-w-0">
             <p className="mb-5 inline-flex rounded-full border border-[#985EF7]/35 bg-[#985EF7]/12 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-[#d8c3ff]">
               Portal oficial da liga
             </p>
-            <h1 className="max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-7xl">
+            <h1 className="max-w-4xl break-words text-[2.65rem] font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-7xl">
               Liga Acadêmica de Games da Universidade CEUMA
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
@@ -118,7 +118,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="lag-console-float relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="lag-console-float relative mx-auto w-full max-w-[20rem] min-w-0 sm:max-w-md lg:max-w-none">
             <FloatingLogo3D />
           </div>
         </div>
