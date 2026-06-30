@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FloatingLogo3D } from "./components/floating-logo-3d";
+import { EightBitDoAccent, FloatingLogo3D } from "./components/floating-logo-3d";
 
 const focusAreas = [
   {
@@ -193,22 +193,29 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {focusAreas.map((area) => (
-              <article
-                className="group rounded-3xl border border-white/10 bg-[#14101d] p-6 transition hover:-translate-y-1 hover:border-[#985EF7]/60"
-                key={area.title}
-              >
-                <p className="mb-8 inline-flex rounded-full bg-[#985EF7]/15 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-[#c9abff]">
-                  {area.label}
-                </p>
-                <h3 className="text-xl font-black uppercase leading-tight">
-                  {area.title}
-                </h3>
-                <p className="mt-4 leading-7 text-zinc-400">
-                  {area.description}
-                </p>
-              </article>
-            ))}
+            {focusAreas.map((area, index) => {
+              const hasEightBitDoAccent = index === focusAreas.length - 1;
+
+              return (
+                <article
+                  className={`group relative rounded-3xl border border-white/10 bg-[#14101d] p-6 transition hover:-translate-y-1 hover:border-[#985EF7]/60 ${hasEightBitDoAccent ? "overflow-visible" : "overflow-hidden"}`}
+                  key={area.title}
+                >
+                  {hasEightBitDoAccent ? (
+                    <EightBitDoAccent className="-right-8 -bottom-10 z-100 h-40 w-40 blur-[0.2px] transition-opacity duration-300 group-hover:opacity-75 sm:-right-14 sm:-bottom-23 sm:h-42 sm:w-42" />
+                  ) : null}
+                  <p className="relative z-10 mb-8 inline-flex rounded-full bg-[#985EF7]/15 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-[#c9abff]">
+                    {area.label}
+                  </p>
+                  <h3 className="relative z-10 text-xl font-black uppercase leading-tight">
+                    {area.title}
+                  </h3>
+                  <p className="relative z-10 mt-4 leading-7 text-zinc-400">
+                    {area.description}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
